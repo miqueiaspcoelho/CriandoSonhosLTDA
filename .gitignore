@@ -1,0 +1,9 @@
+dist
+build
+*.spec
+*.ico
+__pycache__
+*__pycache__
+*.txt
+*.exe
+*.pyc
