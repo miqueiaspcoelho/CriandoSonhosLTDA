@@ -39,4 +39,6 @@ Esse software é parte do programa para recrutamento de novos talentos do projet
 
 [Acesse o documento detalhado aqui.](https://docs.google.com/document/d/1ko1jYclh1JraTPVI6uLXApfpHNh2PedjnyXawAxyvYQ/edit?usp=sharing)
 
+[Acesse o caderno virtual Notion com teoria.](https://sleepy-bolt-bee.notion.site/Manuten-o-de-Software-Uma-abordagem-te-rica-e-pr-tica-151674186cac8073bcecff137ef65151)
+
 
