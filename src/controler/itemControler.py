@@ -1,4 +1,5 @@
 from model.item import Item
+from collections import defaultdict
 
 import sys
 from pathlib import Path
@@ -6,18 +7,58 @@ file = Path(__file__).resolve()
 parent, root = file.parent, file.parents[1]
 sys.path.append(str(root))
 class ItemControler:
+    @staticmethod
+    def estruturar_dados(data: object)-> list:
+        """
+        Estrutura os dados de um objeto `Item` em uma lista.
+
+        :param data: Objeto `Item` contendo as informações do item.
+        :return: Lista com os dados do item (list).
+        """
+        result = []
+        for item in data:
+            result.append({"id": item[0],
+                            "nome": item[1],
+                            "preco": item[2],
+                            "tipo": item[3],
+                            "descricao": item[4]})
+        return result
+
+   
+
+    def gerarMenuTexto(itens: list) -> str:
+        """
+        Gera uma string formatada com os itens do menu, agrupados por tipo e alinhados em colunas.
+
+        :param itens: Lista de itens a serem formatados (list).
+        :return: String formatada com os itens do menu (str).
+        """
+        # Cabeçalho padrão com colunas alinhadas
+        header = f"{'ID':<4} {'Nome':<25} {'Preço':<10} {'Descrição'}"
+        linha_sep = '-' * 70
+
+        menu_texto = ''
+        for item in itens:
+            menu_texto += "\n" + linha_sep + "\n"
+            menu_texto += f"{item['id']:<4} {item['nome']:<25} R$ {item['preco']:<7.2f} {item['descricao']}\n"
+
+        return menu_texto.strip()
+
     
     #exibir todos os itens do menu
     @staticmethod
-    def mostrar_itens_menu(database_name: str)-> object:
+    def mostrar_itens_menu(database_name: str)-> str:
         """
         Chama a função que exibe todos os itens do menu no banco de dados.
 
         :param database_name: Nome do banco de dados a ser consultado (string).
         :return: Lista de itens (list) ou código de erro (string).
         """
+        
         result  = Item.mostrar_itens_menu(database_name)
-        return result
+        itensMenu: list = ItemControler.estruturar_dados(result)
+        itensMenuTexto: str = ItemControler.gerarMenuTexto(itensMenu)
+        return itensMenuTexto
     
     
     #inserindo um item no banco de dados
