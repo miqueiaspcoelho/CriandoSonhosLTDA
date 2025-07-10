@@ -1,6 +1,4 @@
 from model.item import Item
-import aiosqlite
-import asyncio
 
 import sys
 from pathlib import Path

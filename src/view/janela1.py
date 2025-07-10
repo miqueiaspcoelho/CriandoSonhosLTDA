@@ -1,8 +1,6 @@
 #para pegar a data de hoje
 from datetime import date
 import time
-import aiosqlite
-import asyncio
 
 #Necessário para realizar import em python
 import sys

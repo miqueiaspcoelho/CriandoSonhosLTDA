@@ -1,7 +1,6 @@
 #import de model
 from model.database import Database
 import aiosqlite
-import asyncio
 
 #Necessário para realizar import em python
 import sys
