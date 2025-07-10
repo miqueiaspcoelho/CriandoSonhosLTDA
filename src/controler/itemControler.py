@@ -1,4 +1,6 @@
 from model.item import Item
+import aiosqlite
+import asyncio
 
 import sys
 from pathlib import Path
@@ -62,7 +64,7 @@ class ItemControler:
         
     #valor de um item informado pelo seu indice
     @staticmethod
-    def valor_item(database_name: str, indice: int)-> object:
+    async def valor_item(database_name: str, indice: int)-> object:
         """
         Retorna o valor (preço) de um item a partir do seu `IdItens`.
 
@@ -70,7 +72,7 @@ class ItemControler:
         :param indice: ID do item para o qual o preço será consultado (int).
         :return: Lista com o valor do item pesquisado ou código de erro (string).
         """
-        result = Item.valor_item(database_name,indice)
+        result = await Item.valor_item(database_name,indice)
         return result
     
     @staticmethod

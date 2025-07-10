@@ -1,6 +1,8 @@
 #para pegar a data de hoje
 from datetime import date
 import time
+import aiosqlite
+import asyncio
 
 #Necessário para realizar import em python
 import sys
@@ -20,7 +22,7 @@ from controler.itemControler import ItemControler
 class Janela1:
     
     @staticmethod
-    def mostrar_janela1(database_name: str) -> None:
+    async def mostrar_janela1(database_name: str) -> None:
         """
         View para o usuário utilizar o software
         
@@ -49,11 +51,10 @@ class Janela1:
                     quantidade = int(input('Quantidade: '))
                     
                     #calculando em tempo de execução o valor do pedido
-                    a = ItemControler.valor_item(database_name, item)
-                    b = a[0][0]*quantidade
+                    a = await ItemControler.valor_item(database_name, item)
+                    b = a[0]*quantidade
                     print(b)
                     valor_total+=b
-                    
                     for x in range(0,quantidade):#acrescentado o mesmo item várias vezes, de acordo com a quantidade
                         lista_itens.append((numero_pedido,item))
                     

@@ -5,6 +5,8 @@ from pathlib import Path
 file = Path(__file__).resolve()
 parent, root = file.parent, file.parents[1]
 sys.path.append(str(root))
+import aiosqlite
+import asyncio
 
 #models
 from model.pedido import Pedido
@@ -54,7 +56,7 @@ print('''
 while a == 'y':
     opcao = str(input('\n1 - Cadastrar\n2 - Pesquisar\n3 - Relatorio\n4 - Inserir Itens Menu\n5 - Encerrar\nDigite: '))
     if opcao == '1':
-        Janela1.mostrar_janela1(database.name)
+        asyncio.run(Janela1.mostrar_janela1(database.name))
     if opcao == '2':
         Janela2.mostrar_janela2(database.name)
     if opcao == '3':

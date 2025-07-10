@@ -1,5 +1,7 @@
 #import de model
 from model.database import Database
+import aiosqlite
+import asyncio
 
 #Necessário para realizar import em python
 import sys
@@ -125,7 +127,7 @@ class Item:
         
     #valor de um item informado pelo seu indice
     @staticmethod
-    def valor_item(database_name: str, indice: int)-> object:
+    async def valor_item(database_name: str, indice: int)-> object:
         """
         Pesquisa o valor de um item de acordo com o identificador único informado
 
@@ -134,13 +136,12 @@ class Item:
         :return: Lista de itens relacionados à pesquisa ou o código de erro (object||string)
         """
         try:
-            with Database.conect_database(database_name) as conn:
-                cursor = conn.cursor()
-                cursor.execute(f'''
-                SELECT Preco FROM Itens WHERE IdItens = {indice};
-                ''')
-                rows = cursor.fetchall()
-                return(rows)
+            async with aiosqlite.connect(database_name) as conn:
+                async with conn.execute('''
+                SELECT Preco FROM Itens WHERE IdItens = ?
+                ''', (indice,)) as cursor: 
+                    row = await cursor.fetchone()
+                    return row
 
         except OSError as e:
             print(e)
