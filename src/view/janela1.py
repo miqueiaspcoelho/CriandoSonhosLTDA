@@ -70,13 +70,17 @@ class Janela1:
                     break
                 endereco = str(input('Endereco:'))
                 status_aux = int(input('status: 1-preparo, 2-pronto, 3-entregue: '))
+                
                 if status_aux == 1:
                     status = 'preparo'
-                if status_aux == 2:
+                elif status_aux == 2:
                     status = 'pronto'
-                else:
+                elif status_aux == 3:
                     status = 'entregue'
- 
+                else:
+                    print('Valor incorreto, recomeçando')
+                    break
+
                 print(f'Valor Final: R${valor_total}')
                 data_hoje = date.today()
                 data_formatada = data_hoje.strftime('%d/%m/%Y')
