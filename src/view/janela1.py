@@ -37,7 +37,11 @@ class Janela1:
             lista_itens = []
             valor_total=0
             
-            a = str(input('Cadastrar pedido (y-Sim, n-Nao): '))
+            while True:
+                a = input('Cadastrar pedido (y-Sim, n-Nao): ').strip().lower()
+                if a in ['y', 'n']:
+                    break
+                print('Opção inválida. Digite "y" para sim ou "n" para não.')
             
             if a=='y':
                 print('----------Cadastrar pedido----------\n')
