@@ -12,8 +12,8 @@ class Janela2:
     def mostrar_janela2(database_name:str):
         faturamento = 0
         print('------Pesquisar Pedido--------')
-        q = int(input('Unico-1\nTodos-2\nAtualizar Estado-3\nDigite: '))
-        if q==1:
+        q = input('Unico-1\nTodos-2\nAtualizar Estado-3\nDigite: ') #linha alterada para ler string
++       if q=='1': #modificação para comparar com string
             indice = int(input('Indice do pedido: '))
             resume = ItemControler.search_into_itens_pedidos_id(database_name, indice)
             informacoes_pedido = PedidoControler.search_in_pedidos_id(database_name,indice)[0]
@@ -26,7 +26,7 @@ class Janela2:
                 print(f'Status: {informacoes_pedido[1]}\nDelivery: {informacoes_pedido[2]}\nEndereco: {informacoes_pedido[3]}\nData: {informacoes_pedido[4]}\nR$ {informacoes_pedido[5]}')
             print('Voltando ao menu inicial\n')
             
-        elif q==2:
+        elif q=='2': #modificação para comparar com string
             row = PedidoControler.search_in_pedidos_all(database_name)            
             faturamento = 0
             exibir_tela = ''
@@ -56,15 +56,26 @@ class Janela2:
                 print(f'\nResumo do pedido {indice}: \n {exibir_tela}\nItens: {quantidade_itens}\n')
                 print('Informações do Pedido\n')
                 print(f'Status: {informacoes_pedido[1]}\nDelivery: {informacoes_pedido[2]}\nEndereco: {informacoes_pedido[3]}\nData: {informacoes_pedido[4]}\nR$ {informacoes_pedido[5]}')
-                novo_status = int(input('preparo - 1 | pronto - 2 | entregue - 3: '))
-                if novo_status/novo_status != 1:
-                    print('Entrada inválida, retornando')
-                else:
-                    result = PedidoControler.update_pedido_status_id(database_name, indice, novo_status)
-                    if result:
-                        print(f'Status do Pedido {indice} atualizado com sucesso')
-                    else:
-                        print('Erro ao atualizar')
+                
+                #atualização do status de pedido
+                while True:
+                    try:
+                        novo_status = int(input('\npreparo-1 | pronto-2 | entregue-3 (ou 0 para cancelar): '))
+                        if novo_status == 0:
+                            print('Atualização cancelada.')
+                            break 
+                        elif novo_status in [1, 2, 3]:
+                            if PedidoControler.update_pedido_status_id(database_name, indice, novo_status):
+                                status_map = {1: 'PREPARO', 2: 'PRONTO', 3: 'ENTREGUE'}
+                                print(f'Status alterado para {status_map[novo_status]}') 
+                                break 
+                            else:
+                                print('Falha na atualização. Tente novamente.')
+                                break 
+                        else:
+                            print('Digite 1, 2, 3 ou 0 para cancelar.') 
+                    except ValueError:
+                        print('Digite apenas números.')
             else:
                 print('Indice inválido')    
         else:
