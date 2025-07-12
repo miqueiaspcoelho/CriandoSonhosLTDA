@@ -112,5 +112,7 @@ class Janela1:
                 time.sleep(2)
                 break
             else:
-                # 🔧 MELHORIA 6: Entrada inválida informativa
+                #TASK 5: Entrada inválida informativa
+                # Exibe mensagem quando a resposta não for 'sim' ou 'não', 
+                # para orientar o usuário sobre a entrada correta
                 print("⚠️ Entrada inválida. Por favor, digite 'sim' ou 'não'.")
