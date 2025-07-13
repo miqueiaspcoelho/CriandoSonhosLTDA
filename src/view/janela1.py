@@ -62,7 +62,18 @@ class Janela1:
                     if not info_item:
                         print(f'Item com o número {item} não encontrado. Verifique o menu.')
                         continue
-                    quantidade = int(input('Quantidade: '))
+
+                    while True:
+                        try:
+                            quantidade = int(input('Quantidade: '))
+                            if quantidade > 0:
+                                break
+                            else:
+                                print('Digite uma quantidade maior que zero.')
+                            
+                        except ValueError:
+                            print('Digite um números válido.')
+
                     
                     #calculando em tempo de execução o valor do pedido
                     a = ItemControler.valor_item(database_name, item)
@@ -72,6 +83,7 @@ class Janela1:
                     
                     for x in range(0,quantidade):#acrescentado o mesmo item várias vezes, de acordo com a quantidade
                         lista_itens.append((numero_pedido,item))
+                    print(f'Item {item} adicionado, quantidade {quantidade}.')
 
                     #verificação de entrada na adição de novos itens
                     while True: 
