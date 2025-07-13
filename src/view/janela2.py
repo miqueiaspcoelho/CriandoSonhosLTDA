@@ -9,6 +9,7 @@ from controler.pedidoControler import PedidoControler
 from controler.itemControler import ItemControler
 
 class Janela2:
+    @staticmethod
     def mostrar_janela2(database_name:str):
         faturamento = 0
         print('------Pesquisar Pedido--------')
@@ -43,31 +44,41 @@ class Janela2:
             print(f'\nPedidos \n\n{exibir_tela}')
             print(f'Faturamento R$ {faturamento}')
         
-        elif q=='3':
+        elif q == 3:
+             # Task 6: Interface para atualizar o status de um pedido
             indice = int(input('Indice do pedido: '))
             resume = ItemControler.search_into_itens_pedidos_id(database_name, indice)
             quantidade_itens = len(resume)
             exibir_tela = ''
             if quantidade_itens>0:
+                # Task 6: Mostrar os dados do pedido antes da alteração
                 informacoes_pedido = PedidoControler.search_in_pedidos_id(database_name,indice)[0]
-
                 for elem in resume:
                     exibir_tela+=f'Tipo: {elem[2]}| Sabor: {elem[0]}| Descricao: {elem[3]}| R$ {elem[1]}|\n'
+
                 print(f'\nResumo do pedido {indice}: \n {exibir_tela}\nItens: {quantidade_itens}\n')
                 print('Informações do Pedido\n')
                 print(f'Status: {informacoes_pedido[1]}\nDelivery: {informacoes_pedido[2]}\nEndereco: {informacoes_pedido[3]}\nData: {informacoes_pedido[4]}\nR$ {informacoes_pedido[5]}')
-                novo_status = int(input('preparo - 1 | pronto - 2 | entregue - 3: '))
-                if novo_status/novo_status != 1:
-                    print('Entrada inválida, retornando')
+                
+                # Task 6: Validação de entrada para garantir que só aceita 1, 2 ou 3
+                while True:
+                    try:
+                        novo_status = int(input('preparo - 1 | pronto - 2 | entregue - 3: '))
+                        if novo_status in [1, 2, 3]:
+                            break
+                        else:
+                            print('Entrada inválida. Digite 1, 2 ou 3')
+                    except ValueError:
+                        print('Entrada inválida, deve ser um número inteiro.')
+                    
+                # Task 6: Atualização do status após entrada válida
+                result = PedidoControler.update_pedido_status_id(database_name, indice, novo_status)
+
+                # Task 6: Feedback visual ao usuário sobre sucesso ou falha
+                if result:
+                    print(f'Status do Pedido {indice} atualizado com sucesso')
                 else:
-                    result = PedidoControler.update_pedido_status_id(database_name, indice, novo_status)
-                    if result:
-                        print(f'Status do Pedido {indice} atualizado com sucesso')
-                    else:
-                        print('Erro ao atualizar')
+                    print('Erro ao atualizar')
             else:
-                print('Indice inválido')    
-        else:
-            print('Entrada inválida, retornando')
-            
-       
+                # Task 6: Mensagem clara quando índice do pedido não existe
+                print('Indice inválido')        
