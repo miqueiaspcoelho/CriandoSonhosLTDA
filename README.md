@@ -12,15 +12,17 @@ Tem como objetivo aplicar manutenções corretivas e evolutivas com base em inte
 - gerenciamento de pedidos
 - controle de faturamento
 
-## Novas Funcionalidades e Correções Aplicadas
+## 🛠️ Novas Funcionalidades e Correções Aplicadas
 
-Nº	Tipo de Manutenção	Descrição
-1	    Corretiva	        Corrigido o problema de confirmação de pedido que não funcionava corretamente mesmo com entrada válida (Sim).
-2	    Corretiva	        Ajustado o fluxo de adição de novos itens ao pedido (evitava duplicidade de ações sem resposta).
-3	    Corretiva	        Corrigida falha na atualização de status de pedidos (sistema ignorava o comando).
-4	    Evolutiva	        Adicionada mensagem de erro para entradas inválidas durante a confirmação do pedido.
-5	    Evolutiva	        Criada nova tela para cadastro de itens no cardápio diretamente pelo sistema.
-6	    Evolutiva	        Melhorado o layout do menu principal de cadastro de pedido, deixando-o mais intuitivo.
+| Nº | Tipo de Manutenção | Descrição |
+|----|---------------------|-----------|
+| 1  | Corretiva           | Corrigido o problema de confirmação de pedido que não funcionava corretamente mesmo com entrada válida (Sim). |
+| 2  | Corretiva           | Ajustado o fluxo de adição de novos itens ao pedido (evitava duplicidade de ações sem resposta). |
+| 3  | Corretiva           | Corrigida falha na atualização de status de pedidos (sistema ignorava o comando). |
+| 4  | Evolutiva           | Adicionada mensagem de erro para entradas inválidas durante a confirmação do pedido. |
+| 5  | Evolutiva           | Criada nova tela para cadastro de itens no cardápio diretamente pelo sistema. |
+| 6  | Evolutiva           | Melhorado o layout do menu principal de cadastro de pedido, deixando-o mais intuitivo. |
+
 
 
 ## Instalação
