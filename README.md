@@ -2,7 +2,7 @@
 
 Este repositório é uma versão derivada (fork) do sistema original Pizza Mais, desenvolvido pela CriandoSonhosLTDA.
 
-Tem como objetivo aplicar manutenções corretivas e evolutivas com base em interações reais de clientes, documentadas na tarefa do processo seletivo.
+Tem como objetivo aplicar manutenções corretivas e evolutivas com base em interações reais de clientes, documentadas na tarefa do processo avaliativo.
 
 ## Funcionalidades
 
