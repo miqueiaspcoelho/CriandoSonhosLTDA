@@ -12,16 +12,19 @@ Tem como objetivo aplicar manutenções corretivas e evolutivas com base em inte
 - gerenciamento de pedidos
 - controle de faturamento
 
-## 🛠️ Novas Funcionalidades e Correções Aplicadas
+## 📋 Tabela de Manutenções – Sistema "Pizza Mais"  
+### Necessário preencher a tabela
 
-| Nº | Tipo de Manutenção | Descrição |
-|----|---------------------|-----------|
-| 1  | Corretiva           | Corrigido o problema de confirmação de pedido que não funcionava corretamente mesmo com entrada válida (Sim). |
-| 2  | Corretiva           | Ajustado o fluxo de adição de novos itens ao pedido (evitava duplicidade de ações sem resposta). |
-| 3  | Corretiva           | Corrigida falha na atualização de status de pedidos (sistema ignorava o comando). |
-| 4  | Evolutiva           | Adicionada mensagem de erro para entradas inválidas durante a confirmação do pedido. |
-| 5  | Evolutiva           | Criada nova tela para cadastro de itens no cardápio diretamente pelo sistema. |
-| 6  | Evolutiva           | Melhorado o layout do menu principal de cadastro de pedido, deixando-o mais intuitivo. |
+| Nº | Descrição do Problema ou Solicitação                                                                 | Manutenção | Ação Esperada                                                                                                   |
+|----|-------------------------------------------------------------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------|
+| 1  |                                                                                                       |            | Melhorar o layout do menu principal para torná-lo mais claro, organizado e visualmente acessível.               |
+| 2  | Entrada para confirmar o cadastro de novo pedido não funciona em alguns casos.                       |            |                                                                                                                  |
+| 3  | Ao adicionar novo item ao pedido, a confirmação falha ocasionalmente.                                | Corretiva  | Revisar a lógica de confirmação de novo item e corrigir falhas de reconhecimento ou fluxo.                      |
+| 4  |                                                                                                       |            |                                                                                                                  |
+| 5  | O sistema não apresenta nenhuma resposta na opção inicial: Cadastrar pedido (y-Sim, n-Nao).           |            | Adicionar validação e exibir mensagens informando o erro ao usuário.                                            |
+| 6  | Ao tentar atualizar o status de um pedido, nenhuma ação ocorre (sistema ignora o comando).           | Corretiva  |                                                                                                                  |
+| 7  | Cliente solicita a criação de uma nova tela para cadastrar novos itens no menu do restaurante.       |            | Implementar uma view de cadastro de itens, integrando com os controllers e models já existentes.               |
+
 
 
 
