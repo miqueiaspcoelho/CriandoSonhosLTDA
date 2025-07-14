@@ -1,7 +1,9 @@
 
-# CriandoSonhosLTDA - Pizza Mais "Seus sonhos têm formato e borda"
+# CriandoSonhosLTDA - Pizza Mais "Seus sonhos têm formato e borda" - (Versão com Manutenções Aplicadas)
 
-Software para gerenciamento de estabelecimento comercial (pizzaria). Criado e distribuído por: CriandoSonhosLTDA.
+Este repositório é uma versão derivada (fork) do sistema original Pizza Mais, desenvolvido pela CriandoSonhosLTDA.
+
+Tem como objetivo aplicar manutenções corretivas e evolutivas com base em interações reais de clientes, documentadas na tarefa do processo seletivo.
 
 
 ## Funcionalidades
@@ -35,7 +37,16 @@ Pressione enter e irá aparecer o terminal dentro da IDE rodando o software
 
 ## Tarefa
 
-Esse software é parte do programa para recrutamento de novos talentos do projeto da Empresa CriandoSonhosLTDA. Consiste em uma sequência de testes de um cenário real, onde um de nossos clientes betas mandou uma série de solicitações para o software de acordo com suas observações e necessidade de uso. Sua tarefa, enquanto desenvolvedor(es) é compreender o que se pede, identificar o tipo de manutenção a ser realizada, implementar a manutenção e rodar o software de forma a mostrar que a sua manutenção solucionou o problema. Muito boa sorte pequenos jedis, que a força esteja com vocês. O prazo para entrega é até: **15/07/25**.
+Este projeto é parte do processo avaliativo da CriandoSonhosLTDA com prazo de entrega até 15/07/2025.
+
+Este repositório foi modificado para fins de análise técnica e demonstração de capacidade de manutenção e evolução de software.
+
+
+## Créditos
+Baseado no repositório oficial da CriandoSonhosLTDA.
+Desenvolvido e mantido por Rafael Freitas, Jonathas Oliveira, Gabriel Silva e Isabel Araújo para fins de avaliação técnica.
+
+## Links importantes:
 
 [Acesse o documento detalhado aqui.](https://docs.google.com/document/d/1ko1jYclh1JraTPVI6uLXApfpHNh2PedjnyXawAxyvYQ/edit?usp=sharing)
 
