@@ -17,14 +17,13 @@ Tem como objetivo aplicar manutenções corretivas e evolutivas com base em inte
 
 | Nº | Descrição do Problema ou Solicitação                                                                 | Manutenção | Ação Esperada                                                                                                   |
 |----|-------------------------------------------------------------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------|
-| 1  |                                                                                                       |            | Melhorar o layout do menu principal para torná-lo mais claro, organizado e visualmente acessível.               |
-| 2  | Entrada para confirmar o cadastro de novo pedido não funciona em alguns casos.                       |            |                                                                                                                  |
+| 1  | Menu principal para cadastro de pedidos está confuso.                                                | Evolutiva  | Melhorar o layout do menu principal para torná-lo mais claro, organizado e visualmente acessível.               |
+| 2  | Entrada para confirmar o cadastro de novo pedido não funciona em alguns casos.                       | Corretiva  | Corrigir a lógica de confirmação do pedido para aceitar corretamente entradas válidas como “Sim”.              |
 | 3  | Ao adicionar novo item ao pedido, a confirmação falha ocasionalmente.                                | Corretiva  | Revisar a lógica de confirmação de novo item e corrigir falhas de reconhecimento ou fluxo.                      |
 | 4  |                                                                                                       |            |                                                                                                                  |
 | 5  | O sistema não apresenta nenhuma resposta na opção inicial: Cadastrar pedido (y-Sim, n-Nao).           |            | Adicionar validação e exibir mensagens informando o erro ao usuário.                                            |
 | 6  | Ao tentar atualizar o status de um pedido, nenhuma ação ocorre (sistema ignora o comando).           | Corretiva  |                                                                                                                  |
 | 7  | Cliente solicita a criação de uma nova tela para cadastrar novos itens no menu do restaurante.       |            | Implementar uma view de cadastro de itens, integrando com os controllers e models já existentes.               |
-
 
 
 
