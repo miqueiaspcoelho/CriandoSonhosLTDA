@@ -82,7 +82,22 @@ class Janela2:
                 else:
                     print('Dados do pedido incompletos.')
 
-            else:
-                print('Indice inválido')  # Editado: mensagem de erro para índice inválido
-                print('Voltando ao menu inicial\n')
-                time.sleep(2)
+                # Task 6: Validação da entrada do novo status
+                while True:
+                    try:
+                        novo_status = int(input('Digite o novo status do pedido: preparo (1), pronto (2), entregue (3): '))
+                        if novo_status in [1, 2, 3]:
+                            break
+                        else:
+                            print('Entrada inválida. Digite 1, 2 ou 3.')
+                    except ValueError:
+                        print('Entrada inválida. Deve ser um número inteiro.')
+
+                # Task 6: Atualização do status no banco de dados
+                result = PedidoControler.update_pedido_status_id(database_name, indice, novo_status)
+
+                # Task 6: Mensagem de sucesso ou falha da operação
+                if result:
+                    print(f'Status do pedido {indice} atualizado com sucesso!\n')
+                else:
+                    print('Erro ao atualizar o status do pedido.\n')
