@@ -69,7 +69,17 @@ class Janela1:
                     for x in range(0,quantidade):#acrescentado o mesmo item várias vezes, de acordo com a quantidade
                         lista_itens.append((numero_pedido,item))
                     
-                    adicionar = str(input('Adicionar novo item? (y-Sim, n-Nao): '))
+                    # Validação robusta para adicionar novo item
+                    while True:
+                        adicionar_input = str(input('Adicionar novo item? (s-Sim, n-Nao): ')).lower().strip()
+                        if adicionar_input in respostas_positivas:
+                            adicionar = 's'
+                            break
+                        elif adicionar_input in respostas_negativas:
+                            adicionar = 'n'
+                            break
+                        else:
+                            print('Resposta inválida! Digite "s" para Sim ou "n" para Não.')
                 
                 print('\n----------Finalizar pedido----------\n')
                 print(f'Numero do pedido: {numero_pedido}')
