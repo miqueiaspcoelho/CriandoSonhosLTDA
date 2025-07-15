@@ -1,4 +1,3 @@
-
 import sys
 import time
 from pathlib import Path
@@ -22,7 +21,7 @@ from controler.relatorioController import RelatorioControler
 #views
 from view.janela1 import Janela1
 from view.janela2 import Janela2
-#from view.janela3 import Janela3
+from view.janela3 import Janela3
 
 #report
 from report.relatorio1 import PDF
@@ -57,9 +56,9 @@ while a == 'y':
     opcao = str(input('\n1 - Cadastrar\n2 - Pesquisar\n3 - Relatorio\n4 - Inserir Itens Menu\n5 - Encerrar\nDigite: '))
     if opcao == '1':
         asyncio.run(Janela1.mostrar_janela1(database.name))
-    if opcao == '2':
+    elif opcao == '2':
         Janela2.mostrar_janela2(database.name)
-    if opcao == '3':
+    elif opcao == '3':
         timestamp_atual = str(time.time())
         dados_relatorio = RelatorioControler.preparar_dados_relatorio(database.name)
         relatorio = PDF.gerar_pdf(f'Relatorio{timestamp_atual}.pdf', dados_relatorio["pedidos"],dados_relatorio["faturamento_total"])
@@ -68,11 +67,14 @@ while a == 'y':
             print("Relatório gerado com sucesso em 'Relatorio.pdf'.")
         else:
             print("Erro ao gerar o relatório.")
-    if opcao == '4':
-        print('Nova view')
-    if opcao == '5':
+    elif opcao == '4':
+        from view.janela3 import Janela3
+        Janela3.mostrar_janela3(database.name)
+    elif opcao == '5':
         a = 'n'
         break
+    else:
+        print("Opção inválida, tente novamente.")
 exit()
 
 #manutenções em: itemControler.py, janela1.py, pedidoControler.py
