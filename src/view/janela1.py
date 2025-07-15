@@ -29,10 +29,15 @@ class Janela1:
         
         a = 'y'
         
-        menu = ItemControler.mostrar_itens_menu(database_name)
+        # SOLUÇÃO Nº 1 (Perfectiva): Melhorando a exibição do menu.
+        menu_itens = ItemControler.mostrar_itens_menu(database_name)
+        print('\n-------------------- Menu --------------------')
+        print(f'{"ID":<5}| {"Nome":<20}| {"Preço":<10}| {"Tipo":<15}')
+        print('-' * 55)
+        for item in menu_itens:
+            print(f'{item[0]:<5}| {item[1]:<20}| R$ {item[2]:<7.2f}| {item[3]:<15}')
+        print('-' * 55)
         
-        print('----------Menu----------\n')
-        print(f'{menu} \n')
         while a=='y':
             lista_itens = []
             valor_total=0
