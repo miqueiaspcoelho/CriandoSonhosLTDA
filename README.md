@@ -22,7 +22,7 @@ Tem como objetivo aplicar manutenções corretivas e evolutivas com base em inte
 | 4   | Os pedidos são registrados com status **entregue** independente da opção inputada              | Corretiva  | Revisar lógica de definição do status através do input fornecido pelo usuário e incluir mensagem de erro para opções inválidas. |
 | 5   | O sistema não apresenta nenhuma resposta na opção inicial: Cadastrar pedido (y-Sim, n-Nao).    | Evolutiva  | Adicionar validação e exibir mensagens informando o erro ao usuário.                                                            |
 | 6   | Ao tentar atualizar o status de um pedido, nenhuma ação ocorre (sistema ignora o comando).     | Corretiva  | Corrigir o sistema para que, ao atualizar o status de um pedido, ele realmente salve a alteração e informe o usuário se a atualização foi feita com sucesso ou se houve algum erro.                                                                                                                                |
-| 7   | Cliente solicita a criação de uma nova tela para cadastrar novos itens no menu do restaurante. |            | Implementar uma view de cadastro de itens, integrando com os controllers e models já existentes.                                |
+| 7   | Cliente solicita a criação de uma nova tela para cadastrar novos itens no menu do restaurante. | Evolutiva  | Implementar uma view de cadastro de itens, integrando com os controllers e models já existentes.                                |
 
 ## Instalação
 
